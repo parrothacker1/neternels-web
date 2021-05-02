@@ -10,6 +10,6 @@ Heroku(app)
 sql=SQL()
 @app.route('/')
 def index():
-        return render_template('index.html',name=sql.get_members(),len1=len(sql.get_mem>
+        return render_template('index.html')#,name=sql.get_members(),len1=len(sql.get_mem>
 if __name__=="__main__":
 	app.run()
