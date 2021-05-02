@@ -1,4 +1,4 @@
-from modules.connector import SQL
+#from modules.connector import SQL
 import base64,os
 from flask import Flask,render_template
 from flask_heroku import Heroku
