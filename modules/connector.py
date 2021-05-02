@@ -27,7 +27,7 @@ class SQL:
 	def passwd(self):
 		cur=self.cur
 		cur.execute("SELECT * from passwd")
-		return cur.fetchall[0][0]
+		return cur.fetchall()[0][0]
 	def get_members(self):
 		cur=self.cur
 		cur.execute("SELECT * FROM members;")
