@@ -1,0 +1,138 @@
+<html>
+  <head>
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1" name="viewport">
+  {% if request.MOBILE %}
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/style.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/menu.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/sidebar.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/download.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/slider.css')}}">
+  {% else %}
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/style.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/menu.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/sidebar.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/slider.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/download.css')}}">
+  {% endif %}
+  <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.16/assets/font-logos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>Downloads | NetErnels</title>
+  </head>
+  <body id="index">
+<div id="mySidebar" class="sidebar">
+          <a onclick="window.open('/','_self');">Home</a>
+          <a onclick="window.open('/download','_self');">Downloads</a>
+          <a onclick="window.open('/kernel','_self');">Kernel Request</a>
+          <a onclick="window.open('/howto','_self');">How to Install</a>
+        </div>
+        <br>
+        <div style="margin-right:6%;text-align:right">
+        <div class="container" onclick="myFunction(this)">
+          <div id="bar1" class="bar1"></div>
+          <div id="bar2" class="bar2"></div>
+          <div id="bar3" class="bar3"></div>
+        </div>
+        </div>
+        <div>
+ <h1>  NetErnels</h1>
+<br><br><br><br><br>
+  <div>
+  {% for x in range(0,len) %}
+    <div class="box">
+	<div class="popup"><br>{{name[x][0]}}<br><br><span>{{name[x][2]}}</span>
+	</div>
+	<div class="info">
+	<br><br>
+	&emsp;Developer : {{name[x][3]}}<br><br>
+	&emsp;Size: {{name[x][4]}} MB<br><br>
+	<div  onclick="window.open('{{name[x][1]}}');" class="btn"><br><br>Download</div><br>
+	</div>
+  </div>
+  <br>
+  {% endfor %}
+  <br><br>
+  <div class="swi_con">
+          Dark&ensp;<label class="switch"><input id="darrk" onclick=dark_switch() type="checkbox">
+                <span class="slider round"></span>
+          </label>&ensp;Light
+    </div>
+    <br><br><br><br>
+        <div class="footer">
+                <br><br>&emsp;&emsp;<i class="fa fa-telegram" onclick="window.open('https://t.me/neternels_chat');"></i>&emsp;&emsp;
+                <i  class="fa fa-gitlab" onclick="window.open('https://www.gitlab.com/neternels');"></i>&emsp;&emsp;
+                <i  class="fa fa-github" onclick="window.open('https://www.github.com/neternels');"></i>&emsp;&emsp;
+                <br><br>
+        </div>
+  </body>
+  <script>
+  var i=0;
+function myFunction(x) {
+  i=i+1;
+  if (i%2 != 0) {
+        document.getElementById("mySidebar").style.width = "150px";
+        document.getElementById("bar1").style.transform="rotate(-45deg) translate(-9px, 6px)";
+        document.getElementById("bar2").style.transform="translateX(-150px)";
+        document.getElementById("bar2").style.opacity="0";
+        document.getElementById("bar3").style.transform="rotate(45deg) translate(-8px, -8px)";
+  } else {
+        document.getElementById("mySidebar").style.width = "0px";
+        document.getElementById("bar1").style.transform="rotate(0deg) translate(0px, 0px)";
+        document.getElementById("bar2").style.transform="translateX(0px)";
+        document.getElementById("bar2").style.opacity="1";
+        document.getElementById("bar3").style.transform="rotate(0deg) translate(0px, 0px)";
+
+  }
+
+  }
+</script>
+  <script>
+  var local=window.localStorage;
+  var j;
+function dark(n) {
+        if (n%2==0) {
+                document.getElementById("mySidebar").style.backgroundColor="ffffff";
+                document.querySelectorAll("a")[0].style.color="000";
+                document.querySelectorAll("a")[1].style.color="000";
+                document.querySelectorAll("a")[2].style.color="000";
+                document.querySelectorAll("a")[3].style.color="000";
+                document.getElementById("darrk").checked=false;
+                document.body.style.backgroundColor="000000";
+                document.getElementById("index").style.color="ffffff";
+                document.getElementById("bar1").style.backgroundColor="ffffff";
+                document.getElementById("bar2").style.backgroundColor="ffffff";
+                document.getElementById("bar3").style.backgroundColor="ffffff";
+                local.removeItem("theme");
+                local.setItem("theme","dark");
+        } else {
+                document.getElementById("mySidebar").style.backgroundColor="000000";
+                document.querySelectorAll("a")[0].style.color="ffffff";
+                document.querySelectorAll("a")[1].style.color="ffffff";
+                document.querySelectorAll("a")[2].style.color="ffffff";
+                document.querySelectorAll("a")[3].style.color="ffffff";
+                document.getElementById("darrk").checked=true;
+                document.body.style.backgroundColor="ffffff";
+                document.getElementById("index").style.color="000000";
+                document.getElementById("bar1").style.backgroundColor="000000";
+                document.getElementById("bar2").style.backgroundColor="000000";
+                document.getElementById("bar3").style.backgroundColor="000000";
+                local.removeItem("theme");
+                local.setItem("theme","light");
+        }
+}
+function dark_switch() {
+        i=i+1;
+        dark(i);
+}
+function dark_check() {
+        var theme=local.getItem("theme");
+        if (theme=="dark") {
+                dark(2);
+        } else {
+                dark(1);
+        }
+}
+window.onload=function() {dark_check()};
+</script>
+</html>
+
