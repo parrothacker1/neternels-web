@@ -1,0 +1,38 @@
+.box .info {
+        border-color:#2196f3;
+        margin-left:5%;
+        height:0;
+        overflow-y:hidden;
+        transition:0.4s;
+  }
+.popup {
+  background-color:#2196f3;
+  height:7vh;
+  width:42vh;
+  margin-left:5%;
+  margin-right:10%;
+  font-size:2vh;
+  text-align:center;
+  border-radius:25px;
+  position: relative;
+  transition:0.4s;
+}
+.popup span {
+  transition:0.4s;
+  opacity:0;
+}
+.box:hover .popup {
+  height:10vh;
+  background-color:#249fff;
+}
+.box:hover .popup span {
+  transform:translateX(-30px);
+  opacity:1;
+ }
+ .box:hover .info {
+   height:28vh;
+ }
+ .btn {
+   margin-left:27vh;
+   border-radius:25px;
+ }
