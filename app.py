@@ -1,7 +1,7 @@
 #from modules.connector import SQL
-import base64,os
+#import base64,os
 from flask import Flask,render_template
-from flask_heroku import Heroku
+#from flask_heroku import Heroku
 from flask import request as req
 from flask_mobility import Mobility
 app=Flask(__name__)
