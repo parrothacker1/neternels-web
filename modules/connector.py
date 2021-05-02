@@ -1,4 +1,4 @@
-import psycopg2
+import psycopg2,os
 import requests
 class SQL:
 	def __init__(self):
