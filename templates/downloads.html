@@ -1,19 +1,11 @@
 <html>
   <head>
-  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1" name="viewport">
-  {% if request.MOBILE %}
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/style.css')}}">
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/menu.css')}}">
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/sidebar.css')}}">
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/download.css')}}">
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/slider.css')}}">
-  {% else %}
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/style.css')}}">
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/menu.css')}}">
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/sidebar.css')}}">
-  	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/slider.css')}}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/download.css')}}">
-  {% endif %}
+  <meta content="width=device-width,initial-scale=1.0" name="viewport">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/download.css')}}">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css')}}">
   <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.16/assets/font-logos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -35,7 +27,7 @@
         </div>
         </div>
         <div>
- <h1>  NetErnels</h1>
+ <h1>NetErnels</h1>
 <br><br><br><br><br>
   <div>
   {% for x in range(0,len) %}
@@ -57,7 +49,8 @@
                 <span class="slider round"></span>
           </label>&ensp;Light
     </div>
-    <br><br><br><br>
+    <div style="height:15vh">
+    </div>
         <div class="footer">
                 <br><br>&emsp;&emsp;<i class="fa fa-telegram" onclick="window.open('https://t.me/neternels_chat');"></i>&emsp;&emsp;
                 <i  class="fa fa-gitlab" onclick="window.open('https://www.gitlab.com/neternels');"></i>&emsp;&emsp;
