@@ -1,6 +1,12 @@
-#name {margin-left:25%;}
-#code {margin-left:17%;}
-#tgu {margin-left:13%;}
-#kv {margin-left:7.5%;}
-#link {margin-left:5.5%;height:4vh;width:42vw;position:relative;}
-#ver {margin-left:19.5%;}
+.req_ele {
+	font-size:4.5vw;
+}
+#name {margin-left:26vw;width:40vw;}
+#code {margin-left:16vw;width:40vw;}
+#tgu {margin-left:11vw;width:40vw;}
+#kv {margin-left:4.5vw;width:40vw;}
+#link {margin-left:1.5vw;height:3vh;width:40vw;position:relative;}
+#ver {margin-left:19vw;width:40vw;}
+.btn {
+	margin-left:36vw;
+}

@@ -1,5 +1,6 @@
 * {
   user-select:none;
+  font-family: "Times New Roman", Times, serif;
   -webkit-user-select:none;
   -moz-user-select:none;
   tap-highlight-color:transparent;
@@ -59,14 +60,18 @@
         height:50vh;
 }
 .containcrds::-webkit-scrollbar { width: 0 !important }
+.containcrds::-moz-scrollbar { width: 0 !important }
 td {
   text-align:center;
   font-size:5vw;
   border:2.4px solid White;
 }
 table {
-  width:100%;
-  font-size:2vw;
+  margin-left:3vw;
+  margin-right:3vw;
+  border-collapse:collapse;
+  width:94vw;
+  font-size:5vw;
   position:relative;
 }
 body {
@@ -83,8 +88,8 @@ body {
   color:Black;
 }
 #ico {
-  font-size:50vw;
-  margin-left:30vw;
+  font-size:30vw;
+  margin-left:40vw;
   color:#2196f3;
 }
 .head {
@@ -95,8 +100,8 @@ h1 {
   font-size:15vw;
 }
 img {
-  margin-left:10%;
-  width:80%;
+  margin-left:20vw;
+  width:60vw;
   border-radius:50%;
 }
 .bar-left1 {
@@ -106,12 +111,12 @@ img {
 }
 .alert {
   color:#ff0000;
-  width:25vw;
+  width:40vw;
   height:8vh;
-  margin-left:22%;
-  margin-bottom:10%;
+  margin-left:27vw;
+  margin-bottom:10vh;
   text-align:center;
-  font-size:2vw;
+  font-size:4vw;
   transition:0.4s;
 }
 .btn {
@@ -178,4 +183,25 @@ img {
   100% {
         opacity:0;
   }
+}
+@media screen and (max-width: 600px) {
+	img {
+		margin-left:10vw;
+		width:80vw;
+	}
+	#ico {
+		margin-left:30vw;
+		font-size:50vw;
+	}
+	table {
+		margin-left:3vw;
+		margin-right:3vw;
+		border-collapse:collapse;
+		width:94vw;
+		font-size:2vw;
+		position:relative;
+	}
+	.containcrds {
+		height:50vh;
+	}
 }
