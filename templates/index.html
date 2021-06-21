@@ -1,20 +1,12 @@
 <html>
   <head>
 	<title>Home | NetErnels</title>
-	<meta content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1" name="viewport">
-	{% if request.MOBILE %}
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/style.css')}}">
-	 	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/menu.css')}}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile/sidebar.css')}}">
-		<link rel="stylesheet" href="{{ url_for('static',filename='css/mobile/slider.css')}}">
+	<meta content="width=device-width,initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+	 	<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/slider.css')}}">
 		<link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.16/assets/font-logos.css" rel="stylesheet">
-	{% else %}
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/style.css')}}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/menu.css')}}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/sidebar.css')}}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/slider.css')}}">
-		<link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.16/assets/font-logos.css" rel="stylesheet">
-	{% endif %}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
     <body id="index">
@@ -43,7 +35,7 @@
 		<div id="barl2" style="background-color:#2196f3"  class="bar-left2 bar"></div>
 		<div id="barr2" style="background-color:#2196f3"  class="bar-right2 bar"></div>
 	  </div>
-	  <br><br><br><br>
+	  <br>
 	</div>
 	<div>
 	  <i id="null1" class="null fl fl-kali-linux"></i><br>
@@ -57,13 +49,13 @@ We are a group of people trying to make nethunter kernels for devices which are 
 	</div>
 	<br><br><br>
 	<div style="text-align:center">
-	<div id="slider" style="background-color:black;width:199px"></div>
+	<div id="slider" style="background-color:black;width:199vw"></div>
 	  <div class="containcrds">
 		{% for x in range(0,len1) %}
 		<div class="prof_div" id="card{{x}}" onclick=test()>
 			<img src="{{name[x][2]}}" class="prof"><br><br>
-			&ensp;<a href="{{name[x][1]}}" style="text-decoration:none;color:#2196f3"><b id="name">{{name[x][0]}}</b></a><br><br>
-			&ensp;<b>{{name[x][3]}}</b>
+			&emsp;<a href="{{name[x][1]}}" style="text-decoration:none;color:#2196f3"><b id="name">{{name[x][0]}}</b></a><br><br>
+			&emsp;<b>{{name[x][3]}}</b>
 		</div>&emsp;
 		{% endfor %}
 		</div>

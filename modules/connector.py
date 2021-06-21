@@ -3,7 +3,7 @@ import requests
 class SQL:
 	def __init__(self):
 		DATABASE_URL = os.environ['DATABASE_URL']
-		self.conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+		self.conn = psycopg2.connect(DATABASE_URL)#, sslmode='require')
 		self.cur=self.conn.cursor()
 	def login(self,bool):
 		cur=self.cur

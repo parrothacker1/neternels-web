@@ -1,5 +1,6 @@
 * {
   user-select:none;
+  font-family: "Times New Roman", Times, serif;
   -webkit-user-select:none;
   -moz-user-select:none;
   tap-highlight-color:transparent;
@@ -12,40 +13,41 @@
   cursor: pointer;
 }
 .prof {
-  width:50vw;
+  width:25vw;
   margin:auto;
   margin-top:1.5vw;
-  margin-left:20vw;
-  margin-right:20vw;
+  margin-left:2.5vw;
+  margin-right:2.5vw;
   border-radius:50%;
 }
 .footer {
+	height:auto;
 	color:white;
 	background-color:black;
 	text-align:center;
 	margin-left:-10px;
-	font-size:8vw;
+	font-size:5vw;
 }
 .prof_div {
   margin-top:0.6vh;
-  margin-bottom:10vw;
+  margin-bottom:10vh;
   text-align:center;
-  margin-right:10vw;
-  margin-left:10vw;
-  width:40vh;
-  height:45vh;
+  margin-right:20vw;
+  margin-left:20vw;
+  width:100vw;
+  height:30vh;
 }
 .prof_div b {
-	font-size:2vh;
+	font-size:3vw;
 }
 .prof_div #name {
-	font-size:3vh;
+	font-size:5vw;
 }
 .err_txt {
-	font-size:3.5vh;
+	font-size:3.5vw;
 }
 .err {
-      font-size:15vh;
+      font-size:15vw;
       transition:0.4s;
  }
 .containcrds {
@@ -55,16 +57,26 @@
         overflow-x:auto;
         scroll-snap-type: x mandatory;
         position:relative;
-        height:50vh;
+        height:100vh;
 }
 .containcrds::-webkit-scrollbar { width: 0 !important }
+.containcrds::-moz-scrollbar { width: 0 !important }
 td {
   text-align:center;
-  font-size:13pt;
+  font-size:2vw;
   border:2.4px solid White;
 }
+.msg {
+	font-size:4vw;
+}
+#howto {
+	font-size:4vw;
+}
 table {
-  width:100%;
+  margin-left:22Vw;
+  margin-right:20vw;
+  border-collapse:collapse;
+  width:54vw;
   font-size:2vw;
   position:relative;
 }
@@ -78,68 +90,70 @@ body {
 }
 .null {
   text-align:center;
-  font-size:100px;
+  font-size:10vw;
   color:Black;
 }
 #ico {
-  font-size:25vh;
-  margin-left:30%;
+  font-size:28vw;
+  margin-left:36vw;
   color:#2196f3;
 }
 .head {
-  font-size:205%;
+  font-size:6vw;
 }
 h1 {
   text-align:center;
-  font-size:9vh;
+  margin-top:-1.5vh;
+  font-size:7vw;
 }
 img {
-  margin-left:10%;
-  width:80%;
+  margin-left:33vw;
+  margin-top:-4.5vh;
+  width:32vw;
   border-radius:50%;
 }
 .bar-left1 {
-  margin-top:10%;
-  margin-left:42%;
+  margin-top:14vh;
+  margin-left:43vw;
   transform:rotate(45deg);
 }
 .alert {
   color:#ff0000;
-  width:25vh;
+  width:40vw;
   height:8vh;
-  margin-left:22%;
-  margin-bottom:10%;
+  margin-left:27vw;
+  margin-bottom:10vh;
   text-align:center;
-  font-size:2vh;
+  font-size:2vw;
   transition:0.4s;
 }
 .btn {
   text-align:center;
-  font-size:2vh;
-  height:12vh;
-  width:12vh;
+  font-size:3.5vw;
+  height:50vh;
+  width:24vw;
   background-color:#2196f6;
   margin-left:35%;
 }
 .bar-right1 {
-  margin-top:-1.7%;
-  margin-left:49.5%;
+  margin-top:-2.5vh;
+  margin-left:48vw;
   transform:rotate(-45deg);
 }
 .bar-left2 {
-  margin-top:10%;
-  margin-left:42%;
+  margin-top:19vh;
+  margin-left:43vw;
   transform:rotate(45deg);
 }
 .bar-right2 {
-  margin-top:-1.7%;
-  margin-left:49.5%;
+  margin-top:-2.5vh;
+  margin-left:48vw;
   transform:rotate(-45deg);
 }
 .bar {
   background-color:White;
-  height:0.9%;
-  width:12%;
+  height:2.4vh;
+  width:8vw;
   animation:bar-anim 2s infinite;
 }
 @keyframes bar-anim {
@@ -177,4 +191,82 @@ img {
   100% {
         opacity:0;
   }
+}
+@media screen and (max-width: 600px) {
+	img {
+		margin-left:10vw;
+		width:80vw;
+	}
+	.msg {
+		font-size:4vw;
+	}
+	.prof {
+		width:50vw;
+	}
+	.prof_div {
+		margin-left:10vw;
+		margin-right:10vw;
+		width:50vw;
+	}
+	.btn {
+		font-size:4.5vw;
+		height:13vh;
+		width:30vw;
+	}
+	.prof_div b {
+		font-size:7vw;
+	}
+	.prof_div #name {
+		font-size:9vw;
+	}
+	#ico {
+		margin-top:20vh;
+		margin-left:30vw;
+		font-size:50vw;
+	}
+	td {
+		font-size:5vw;
+		border:2.4px solid White;
+	}
+	table {
+		margin-left:3vw;
+		margin-right:3vw;
+		border-collapse:collapse;
+		width:94vw;
+		font-size:2vw;
+		position:relative;
+	}
+	.footer {
+		font-size:8vw;
+	}
+	.containcrds {
+		height:50vh;
+	}
+	h1 {
+		margin-top:-0.25vh;
+		font-size:15vw;
+	}
+	.head {
+		font-size:10vw;
+	}
+	.bar {
+		height:0.9vh;
+		width:12vw;
+	}
+	.alert {
+		font-size:4vw;
+	}
+	.bar-left1 {
+		margin-top:12vh;
+		margin-left:42vw;
+	}
+	.bar-left2 {
+		margin-left:42vw;
+		margin-top:14vh;
+	}
+	.bar-right1,.bar-right2 {
+		margin-top:-1vh;
+		margin-left:49.5vw;
+
+	}
 }

@@ -1,20 +1,12 @@
 <html>
   <head>
         <title>Request  | NetErnels</title>
-        <meta content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1" name="viewport">
-        {% if request.MOBILE %}
-                <link rel="stylesheet" href="{{ url_for('static',filename='css/mobile/sidebar.css')}}">
-                <link rel="stylesheet" href="{{ url_for('static',filename='css/mobile/style.css')}}">
-                <link rel="stylesheet" href="{{ url_for('static',filename='css/mobile/slider.css')}}">
-                <link rel="stylesheet" href="{{ url_for('static',filename='css/mobile/menu.css')}}">
+        <meta content="width=device-width,initial-scale=1.0" name="viewport">
+                <link rel="stylesheet" href="{{ url_for('static',filename='css/sidebar.css')}}">
+                <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+                <link rel="stylesheet" href="{{ url_for('static',filename='css/slider.css')}}">
+                <link rel="stylesheet" href="{{ url_for('static',filename='css/menu.css')}}">
                 <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.16/assets/font-logos.css" rel="stylesheet">
-        {% else %}
-                <link rel="stylesheet" href="{{ url_for('static',filename='css/desktop/menu.css')}}">
-                <link rel="stylesheet" href="{{ url_for('static',filename='css/mobile/sidebar.css')}}">
-                <link rel="stylesheet" href="{{ url_for('static',filename='css/desktop/slider.css')}}">
-                <link rel="stylesheet" href="{{ url_for('static', filename='css/desktop/style.css')}}">
-                <link href="//cdn.jsdelivr.net/gh/Lukas-W/font-logos@v0.16/assets/font-logos.css" rel="stylesheet">
-        {% endif %}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
     <body id="index" style="font-size:3vh">
