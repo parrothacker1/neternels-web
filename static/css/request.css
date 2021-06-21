@@ -1,12 +1,47 @@
 .req_ele {
-	font-size:4.5vw;
+	font-size:2vw;
 }
-#name {margin-left:26vw;width:40vw;}
-#code {margin-left:16vw;width:40vw;}
-#tgu {margin-left:11vw;width:40vw;}
-#kv {margin-left:4.5vw;width:40vw;}
-#link {margin-left:1.5vw;height:3vh;width:40vw;position:relative;}
-#ver {margin-left:19vw;width:40vw;}
+
+#name {margin-left:26vw;width:40vw;height:6vh;}
+#code {margin-left:22vw;width:40vw;height:6vh}
+#tgu {margin-left:20vw;width:40vw;height:6vh}
+#kv {margin-left:17vw;width:40vw;height:6vh}
+#link {margin-left:16vw;height:6vh;width:40vw;position:relative;}
+#ver {margin-left:23.5vw;width:40vw;height:6vh;}
 .btn {
+	margin-top:20vh;
 	margin-left:36vw;
+}
+@media screen and (max-width:600px) {
+	#name {
+		height:3vh;
+		margin-left:26vw;
+	}
+	#code {
+		height:3vh;
+		margin-left:16vw;
+	}
+	#tgu {
+		height:3vh;
+		margin-left:11vw;
+	}
+	#kv {
+		height:3vh;
+		margin-left:4.5vw;
+	}
+	#link {
+		height:3vh;
+		margin-left:1.5vw;
+	}
+	#ver {
+		height:3vh;
+		margin-left:19vw;
+	}
+	.btn {
+		margin-top:0;
+		margin-left:33vw;
+	}
+	.req_ele {
+		font-size:4.5vw;
+	}
 }

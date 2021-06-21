@@ -7,11 +7,11 @@
   }
 .popup {
   background-color:#2196f3;
-  height:7vh;
+  height:21vh;
   width:90vw;
   margin-left:5%;
   margin-right:10%;
-  font-size:4vw;
+  font-size:2.5vw;
   text-align:center;
   border-radius:25px;
   position: relative;
@@ -22,7 +22,7 @@
   opacity:0;
 }
 .box:hover .popup {
-  height:10vh;
+  height:35vh;
   background-color:#249fff;
 }
 .box:hover .popup span {
@@ -30,9 +30,26 @@
   opacity:1;
  }
  .box:hover .info {
-   height:30vh;
+   height:75vh;
  }
  .btn {
    margin-left:65vw;
    border-radius:25px;
+ }
+ @media screen and (max-width:600px) {
+	 .popup {
+		 font-size:4vw;
+		 height:7vh;
+
+	 }
+	 .box:hover .popup {
+		 height:10vh;
+	 }
+	 .box:hover .info {
+		 height:30vh;
+	 }
+	 .btn {
+		 margin-left:60vw;
+	 }
+
  }
