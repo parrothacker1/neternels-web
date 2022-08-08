@@ -111,10 +111,11 @@ pub async fn list_kernels() -> Result<(KernelList,StatusCode),Error> {
         Ok(ret)
     }).await.unwrap();
     for company in companies.unwrap() {
+        let cmpny=company.clone();
         let kernels:Result<Vec<Kernel>,Error>=task::spawn_blocking(move || {
             let mut kernels:Vec<Kernel>=Vec::new();
             let mut client=connect()?;
-            let cmpny=String::from(company.as_mut_str());
+            let cmpny=company.clone();
             for kernel in client.query("SELECT * FROM kernels WHERE company=$1",&[&company])? {
                 let krnl=Kernel {
                     id:kernel.get("id"),
@@ -130,15 +131,15 @@ pub async fn list_kernels() -> Result<(KernelList,StatusCode),Error> {
              }
             Ok(kernels)
         }).await.unwrap();
-        let cmpny=String::from(company.as_mut_str());
         hash.insert(cmpny,kernels.unwrap());
     };
     status=StatusCode::from_u16(200).unwrap();
     Ok((hash,status))
 }
-pub async fn add_kernel(new_kernel:Json<Kernel>,token:String) -> Result<(ResultRet,StatusCode),Error> {
+pub async fn add_kernel(kernel:Json<Kernel>,token:String) -> Result<(ResultRet,StatusCode),Error> {
     let status:StatusCode;
     let result:ResultRet;
+    let new_kernel=kernel.clone();
     let kernels:Result<Vec<String>,Error>=task::spawn_blocking(move || {
         let mut client=connect()?;
         let mut ret:Vec<String>=Vec::new();
@@ -175,9 +176,10 @@ pub async fn add_kernel(new_kernel:Json<Kernel>,token:String) -> Result<(ResultR
     }
     Ok((result,status))
 }
-pub async fn update_kernel(old_kernel:Json<Kernel>,token:String) -> Result<(ResultRet,StatusCode),Error> {
+pub async fn update_kernel(kernel:Json<Kernel>,token:String) -> Result<(ResultRet,StatusCode),Error> {
     let status:StatusCode;
     let result:ResultRet;
+    let old_kernel=kernel.clone();
     let kernels:Result<Vec<String>,Error>=task::spawn_blocking(move || {
         let mut ret:Vec<String>=Vec::new();
         let mut client=connect()?;
@@ -286,9 +288,10 @@ pub async fn list_requests() -> Result<(RequestList,StatusCode),Error> {
     status=StatusCode::from_u16(200).unwrap();
     Ok((list.unwrap(),status))
 }
-pub async fn add_request(new_request:Json<Request>) -> Result<(ResultRet,StatusCode),Error> {
+pub async fn add_request(request:Json<Request>) -> Result<(ResultRet,StatusCode),Error> {
     let status:StatusCode;
     let result:ResultRet;
+    let new_request=request.clone();
     let requests:Result<Vec<i32>,Error>=task::spawn_blocking(move || {
         let mut client=connect()?;
         let mut ret:Vec<i32>=Vec::new();
@@ -317,9 +320,10 @@ pub async fn add_request(new_request:Json<Request>) -> Result<(ResultRet,StatusC
     }
     Ok((result,status))
 }
-pub async fn update_request(old_request:Json<Request>,token:String) -> Result<(ResultRet,StatusCode),Error> {
+pub async fn update_request(request:Json<Request>,token:String) -> Result<(ResultRet,StatusCode),Error> {
     let status:StatusCode;
     let result:ResultRet;
+    let old_request=request.clone();
     let requests:Result<Vec<String>,Error>=task::spawn_blocking(move || {
         let mut client=connect()?;
         let mut ret:Vec<String>=Vec::new();
