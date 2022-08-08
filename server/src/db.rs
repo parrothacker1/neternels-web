@@ -115,7 +115,6 @@ pub async fn list_kernels() -> Result<(KernelList,StatusCode),Error> {
         let kernels:Result<Vec<Kernel>,Error>=task::spawn_blocking(move || {
             let mut kernels:Vec<Kernel>=Vec::new();
             let mut client=connect()?;
-            let cmpny=company.clone();
             for kernel in client.query("SELECT * FROM kernels WHERE company=$1",&[&company])? {
                 let krnl=Kernel {
                     id:kernel.get("id"),
